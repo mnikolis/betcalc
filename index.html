@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body class="bg-yellow-200">
+    <div class="container mx-auto max-w-xs h-screen bg-yellow-900 rounded-2xl">
+
+        <!-- header -->
+        <div class="pt-2">
+            <p class="text-xl font-semibold text-yellow-200 text-center bg-yellow-700 rounded-2xl mx-3 pt-1 pb-2 border-2 border-yellow-100 shadow-lg">
+                υπολογιστής στοιχήματος
+            </p>
+        </div>
+        
+        <!-- kerdos ke afksisi -->
+        <div class="flex flex-row mx-6">
+            <p class="mr-2 text-xl font-semibold text-yellow-200">κέρδος</p>
+            <p class="ml-20 text-xl font-semibold text-yellow-200">αύξηση</p>
+        </div>
+        <div class="mx-3">
+            <input id="kerdos" type="text" maxlength="10" class="form-input w-36 bg-gray-100 text-2xl text-center font-semibold text-black rounded-2xl">
+            <input id="afksisi" type="text" maxlength="10" class="form-input w-36 ml-1 bg-gray-100 text-2xl text-center font-semibold text-black rounded-2xl">
+        </div>
+
+        <!-- koubia -->
+        <div class="mx-3 mt-3">
+            <button id="clear" class="w-32 h-16 text-xl font-semibold text-blue-200 text-center bg-blue-900 rounded-2xl pb-1 px-4 border-2 border-blue-100">καθάρισε</button>
+            <button id="calc" class="w-32 h-16 text-xl font-semibold text-green-200 text-center bg-green-900 rounded-2xl ml-9 pb-1 px-4 border-2 border-green-100">υπολόγισε</button>
+        </div>
+        
+        <!-- grami -->
+        <div class="pt-3">
+            <p class="border-b-4 border-yellow-200"></p>
+        </div>
+
+        <!-- stixima 1 -->
+        <div class="mx-3 mt-1">
+            <p id="label1" class="text-xl text-center underline font-semibold text-yellow-200">στοίχημα 1</p>
+
+            <div class="flex flex-row mt-2">
+                <p class="mt-2 mr-6 text-xl font-semibold text-yellow-200">απόδοση:</p>
+                <input id="odd1" type="text" maxlength="6" class="form-input w-32 bg-gray-100 text-2xl font-semibold text-black rounded-2xl">
+            </div>
+            
+            <div class="flex flex-row">
+                <p class="text-xl font-semibold text-yellow-200">ποντάρισμα:</p>
+                <p id="bet1" class="ml-6 text-xl font-semibold text-yellow-200">12</p>
+            </div>
+            
+            <div class="flex flex-row">
+                <p class="text-xl font-semibold text-yellow-200">επιστροφή:</p>
+                <p id="return1" class="ml-6 text-xl font-semibold text-yellow-200">20</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#clear").click(function(){
+                //$("p").hide();
+            });
+
+            $("#calc").click(function(){
+                var odd = parseFloat($("#odd1").val());
+                //alert(n);
+                if(isNaN(odd) || odd < 1.01)
+                {
+                    alert("enter a number minimum 1.01");
+                    $("#odd1").val("1.01");
+                }
+                else
+                {
+                    $("#odd1").val(odd.toFixed(2));
+                }
+                
+                var bet1 = 0.10;
+                var ret1 = 0.0;
+
+                
+            });
+        });
+    </script>
+</body>
+</html>
